@@ -23,6 +23,6 @@ app.post('/posts', (req, res) => {
 logger().info('text info', { meta: 1 });
 logger().warn('text warn');
 logger().error('text error');
-// logger().error(new Error('something went wrong'));
+logger().error(new Error('something went wrong'));
 
 app.listen(5000, logger().info('Server started on port 5000'.green));

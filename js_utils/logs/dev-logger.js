@@ -1,8 +1,8 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const basename = path.basename(__filename);
+// import path from 'node:path';
+// import { fileURLToPath } from 'node:url';
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+// const basename = path.basename(__filename);
 
 // In order to use commonjs in a file uncomment the lines bellow:
 // import { createRequireFromPath } from 'module';
@@ -10,9 +10,10 @@ const basename = path.basename(__filename);
 
 import { format, transports, createLogger } from 'winston';
 const { timestamp, combine, printf, label, errors, colorize } = format;
+
 import 'colors';
 
-const devLogger = () => {
+const devLogger = (labelInfo) => {
   const logFormat = printf(({ level, message, label, timestamp, stack }) => {
     return `${timestamp}`.black + ' - ' + `[${label}] - ${level} - data:${stack || JSON.stringify(message, null, 3)}`;
   });
@@ -20,7 +21,7 @@ const devLogger = () => {
   return createLogger({
     format: combine(
       timestamp({ format: 'DD-MM-YYYY HH:mm:ss' }),
-      label({ label: `${basename}`.grey }),
+      label({ label: `${labelInfo}`.grey }),
       errors({ stack: true }),
       colorize(),
       logFormat,
