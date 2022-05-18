@@ -1,0 +1,13 @@
+@forward 'layout';
+
+.text1 {
+  color: rgb(78, 78, 194);
+  margin-top: 0;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.text2 {
+  color: rgb(204, 95, 95);
+  font-family: var(--font-sans);
+  font-weight: 700;
+}

@@ -1,0 +1,41 @@
+// 700px and under for mobile
+// 900px and under for tablet
+// 1440px and under for desktop
+// 1920px and under for wide desktop
+
+// Sass map
+$breakpoints-up: (
+  //700px
+  'medium': 43.75em,
+  //900px
+  'large': 56.25em,
+  //1440px
+  'xlarge': 90em
+);
+
+// 699.98px and under for mobile
+// 899.98px and under for tablet
+// 1439.98px and under for desktop
+// 1899.98px and under for wide desktop
+
+// Sass map
+$breakpoints-down: (
+  //700px
+  'small': 43.7485em,
+  //900px
+  'medium': 56.24873em,
+  //1440px
+  'xlarge': 89.99875em
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

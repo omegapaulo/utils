@@ -1,0 +1,20 @@
+@use '../utils';
+
+html {
+  box-sizing: border-box;
+  font-size: 100%; // To set size to 100% to the browser default
+  // font-size: 62.5%; // To set size to 100% to the browser default
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}

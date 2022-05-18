@@ -1,0 +1,52 @@
+@use '../utils';
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  width: min(100% - 40px, 1920px); //Set width to 100% until max w is 1920px
+  // margin: 0 auto; // Center the grid
+  margin-inline: auto; //Sets the left and right margin to auto
+
+  @include utils.breakpoint(large) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  &__main,
+  &__sidebar {
+    padding: 40px;
+  }
+
+  &__main {
+    background-color: hsl(240, 97%, 28%);
+    @include utils.breakpoint(medium) {
+      background-color: rgb(7, 105, 105);
+      color: rgb(255, 255, 255);
+
+      p {
+        color: inherit;
+      }
+    }
+
+    @include utils.breakpoint(large) {
+      background-color: rgb(114, 114, 0);
+      color: white;
+    }
+  }
+
+  &__sidebar {
+    background-color: hsl(300, 100%, 20%);
+
+    // To set some extra rules without overwriting the main grid rule
+    // If tablet, center the text
+    @include utils.breakpoint-down(medium) {
+      text-align: center;
+
+      p {
+        color: rgb(134, 19, 19);
+      }
+    }
+  }
+}
