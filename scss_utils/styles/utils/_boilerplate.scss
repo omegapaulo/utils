@@ -1,0 +1,106 @@
+// Montserrat
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+// open-sans
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
+
+:root {
+  // Colors
+  --bg-color: hsl(0, 7%, 22%);
+  --text-color: hsl(125, 79%, 36%);
+
+  // Fonts
+  --font-sans: 'Open Sans';
+  --font-montserrat: 'Montserrat';
+
+  // Font sizes
+  --fs-small: 1rem;
+  --fs-medium: 3.2rem;
+  --fs-large: 4.2rem;
+  --fs-responsive: clamp(1.6rem, 1.6rem + 2vw, 4rem);
+
+  // Font weights
+  --fw-small: 300;
+  --fw-medium: 400;
+  --fw-large: 700;
+
+  // widths
+  --width-responsive: min(100% - 40px, 1920px); //Set width to 100% until max w is 1920px
+
+  // Line heights
+
+  // Margins
+
+  // Paddings
+
+  // Borders
+
+  // Shadows
+
+  // Transforms
+
+  // Transitions
+
+  // Animations
+
+  // Media queries
+
+  // Breakpoints
+  --breakpoint-medium: 43.75em;
+  --breakpoint-large: 56.25em;
+  --breakpoint-xlarge: 90em;
+
+  // Spacing
+
+  // Z-indexes
+
+  // Misc
+}
+
+html {
+  font-size: 62.5%; // To set size to 100% to the browser default
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  // font-family: ;
+  font-size: var(--fs-responsive);
+  line-height: 1.1; // 110% of the line height
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400; // bold
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 10px 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
